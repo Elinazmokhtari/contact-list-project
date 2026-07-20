@@ -86,7 +86,6 @@ export default function ContactForm() {
     }
 
     if (params.id) {
-      // edit mode
       formData.append("_method", "PUT");
 
       return axios
@@ -100,7 +99,6 @@ export default function ContactForm() {
         });
     }
 
-    // create mode
     return axios
       .post(API.contacts, formData, { headers: getApiHeaders() })
       .then((res) => {
